@@ -4,14 +4,8 @@ def read_elements(filename):
     with open(filename, "r") as file:
         for line in file:
             line = line.strip()
-
-            if not line:
-                continue
-
             name, data = line.split(" = ")
-
             data = data.split(", ")
-
             position = int(data[0].split(":")[1])
             number = int(data[1].split(":")[1])
             symbol = data[2].split(":")[1]
@@ -31,7 +25,6 @@ def read_elements(filename):
 
     return elements
 
-
 def get_period(number):
     if number <= 2:
         return 1
@@ -48,57 +41,55 @@ def get_period(number):
     else:
         return 7
 
-
 def create_html(elements):
     html = """<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Periodic Table of the Elements</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Periodic Table of the Elements</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
 
-        table {
-            border-collapse: collapse;
-            margin: 20px auto;
-        }
+            table {
+                border-collapse: collapse;
+                margin: 20px auto;
+            }
 
-        td {
-            border: 1px solid black;
-            width: 100px;
-            height: 130px;
-            vertical-align: top;
-            padding: 5px;
-        }
+            td {
+                border: 1px solid black;
+                width: 100px;
+                height: 130px;
+                vertical-align: top;
+                padding: 5px;
+            }
 
-        h1 {
-            text-align: center;
-        }
+            h1 {
+                text-align: center;
+            }
 
-        h4 {
-            margin: 0 0 10px 0;
-        }
+            h4 {
+                margin: 0 0 10px 0;
+            }
 
-        ul {
-            margin: 0;
-            padding-left: 20px;
-        }
-    </style>
-</head>
-<body>
+            ul {
+                margin: 0;
+                padding-left: 20px;
+            }
+        </style>
+    </head>
+    <body>
 
-<h1>Periodic Table of the Elements</h1>
+    <h1>Periodic Table of the Elements</h1>
+    <h2>Chemical elements</h2>
+    <h3>Table of elements</h3>
 
-<table>
-"""
-
-    # 7 periods
+    <table>
+    """
     for period in range(1, 8):
         html += "    <tr>\n"
 
-        # 18 groups
         for position in range(18):
             element_found = None
 
@@ -122,7 +113,6 @@ def create_html(elements):
                 html += "        </td>\n"
 
         html += "    </tr>\n"
-
     html += """</table>
 
 </body>

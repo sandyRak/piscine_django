@@ -18,7 +18,6 @@ def print_state(args):
   inv_capitals = {valeur:cle for cle, valeur in capital_cities.items()}
   if len(args) != 2:
     return
-  
   if args[1] in capital_cities.values():
     print(inv_states[inv_capitals[args[1]]])
   else:

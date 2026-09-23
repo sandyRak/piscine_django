@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{page_title}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #eef1f5;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .cv-container {
+            display: flex;
+            width: 100%;
+            max-width: 900px;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            background: #1f2937;
+            color: #ffffff;
+            width: 32%;
+            padding: 40px 25px;
+        }
+
+        .sidebar .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: #4f8ef7;
+            color: #ffffff;
+            font-size: 42px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px auto;
+        }
+
+        .sidebar h2 {
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4f8ef7;
+            margin-bottom: 12px;
+            margin-top: 30px;
+            border-bottom: 1px solid #374151;
+            padding-bottom: 6px;
+        }
+
+        .sidebar p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #d1d5db;
+            word-break: break-word;
+        }
+
+        .main {
+            width: 68%;
+            padding: 40px 35px;
+        }
+
+        .main h1 {
+            font-size: 32px;
+            color: #1f2937;
+        }
+
+        .main .subtitle {
+            font-size: 16px;
+            color: #4f8ef7;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .main h2 {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1f2937;
+            border-left: 4px solid #4f8ef7;
+            padding-left: 10px;
+            margin-bottom: 12px;
+            margin-top: 25px;
+        }
+
+        .main p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <aside class="sidebar">
+            <div class="avatar">SR</div>
+
+            <h2>Contact</h2>
+            <p>Phone: {phone}</p>
+            <p>Age: {age}</p>
+            <p>Email: {email}</p>
+            <p>Address: {address}</p>
+
+            <h2>Hard Skills</h2>
+            <p>{hard_skills}</p>
+
+            <h2>Soft Skills</h2>
+            <p>{soft_skills}</p>
+        </aside>
+
+        <main class="main">
+            <h1>{firstname} {lastname}</h1>
+            <div class="subtitle">{job}</div>
+
+            <h2>Profile</h2>
+            <p>
+              {profile}
+            </p>
+
+            <h2>Experience</h2>
+            <p>
+              {experience}
+            </p>
+
+            <h2>Education</h2>
+            <p>
+              {education}
+            </p>
+        </main>
+    </div>
+</body>
+</html>
