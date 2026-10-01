@@ -13,10 +13,10 @@ class Text(str):
         Do you really need a comment to understand this method?..
         """
         content = super().__str__()
-        content = content.replace('&', '&amp;')
         content = content.replace('<', '&lt;')
         content = content.replace('>', '&gt;')
-        content = content.replace('"', '&quot;')
+        if content == '"':
+            content = content.replace('"', '&quot;')
         return content.replace('\n', '\n<br />\n')
 
 
@@ -118,7 +118,7 @@ def create_html_structure():
                 tag='head',
                 content=Elem(
                     tag='title',
-                    content=Text('"Oh no, not again!"')
+                    content=Text('"Hello ground!"')
                 )
             ),
             Elem(
@@ -130,7 +130,7 @@ def create_html_structure():
                     ),
                     Elem(
                         tag='img',
-                        attr={'src': 'http://i.imgur.com/8m51s0b.jpg'},
+                        attr={'src': 'http://i.imgur.com/pfp3T.jpg'},
                         tag_type='simple'
                     )
                 ]
