@@ -19,7 +19,7 @@ class Text(str):
             content = content.replace('"', '&quot;')
         return content.replace('\n', '\n<br />\n')
 
-
+ 
 class Elem:
     """
     Elem will permit us to represent our HTML elements.
@@ -105,41 +105,3 @@ class Elem:
                 (type(content) == list and all([type(elem) == Text or
                                                 isinstance(elem, Elem)
                                                 for elem in content])))
-
-
-def create_html_structure():
-    """
-    Reconstitue la structure HTML demandée dans le sujet.
-    """
-    html = Elem(
-        tag='html',
-        content=[
-            Elem(
-                tag='head',
-                content=Elem(
-                    tag='title',
-                    content=Text('"Hello ground!"')
-                )
-            ),
-            Elem(
-                tag='body',
-                content=[
-                    Elem(
-                        tag='h1',
-                        content=Text('"Oh & no, not again!"')
-                    ),
-                    Elem(
-                        tag='img',
-                        attr={'src': 'http://i.imgur.com/pfp3T.jpg'},
-                        tag_type='simple'
-                    )
-                ]
-            )
-        ]
-    )
-    return html
-
-
-if __name__ == '__main__':
-    structure = create_html_structure()
-    print(structure)

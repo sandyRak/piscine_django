@@ -139,7 +139,6 @@ def create_html_structure():
     )
     return html
 
-
 if __name__ == '__main__':
     structure = create_html_structure()
     print(structure)
